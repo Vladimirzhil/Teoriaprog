@@ -1,0 +1,15 @@
+D:\Новая папка\Teoriaprog\bin\Debug\net6.0\Teoriaprog.exe
+D:\Новая папка\Teoriaprog\bin\Debug\net6.0\Teoriaprog.deps.json
+D:\Новая папка\Teoriaprog\bin\Debug\net6.0\Teoriaprog.runtimeconfig.json
+D:\Новая папка\Teoriaprog\bin\Debug\net6.0\Teoriaprog.dll
+D:\Новая папка\Teoriaprog\bin\Debug\net6.0\Teoriaprog.pdb
+D:\Новая папка\Teoriaprog\obj\Debug\net6.0\Teoriaprog.csproj.AssemblyReference.cache
+D:\Новая папка\Teoriaprog\obj\Debug\net6.0\Teoriaprog.GeneratedMSBuildEditorConfig.editorconfig
+D:\Новая папка\Teoriaprog\obj\Debug\net6.0\Teoriaprog.AssemblyInfoInputs.cache
+D:\Новая папка\Teoriaprog\obj\Debug\net6.0\Teoriaprog.AssemblyInfo.cs
+D:\Новая папка\Teoriaprog\obj\Debug\net6.0\Teoriaprog.csproj.CoreCompileInputs.cache
+D:\Новая папка\Teoriaprog\obj\Debug\net6.0\Teoriaprog.dll
+D:\Новая папка\Teoriaprog\obj\Debug\net6.0\refint\Teoriaprog.dll
+D:\Новая папка\Teoriaprog\obj\Debug\net6.0\Teoriaprog.pdb
+D:\Новая папка\Teoriaprog\obj\Debug\net6.0\Teoriaprog.genruntimeconfig.cache
+D:\Новая папка\Teoriaprog\obj\Debug\net6.0\ref\Teoriaprog.dll

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Teoriaprog/1.0.0": {
+        "runtime": {
+          "Teoriaprog.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Teoriaprog/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
