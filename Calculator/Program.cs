@@ -20,9 +20,7 @@ namespace CALC
     {
         static private bool IsDelimeter(char c)
         {
-            if ((" =".IndexOf(c) != -1))
-                return true;
-            return false;
+            return " =".IndexOf(c) != -1;
         }
         static private bool IsOperator(char с)
         {
