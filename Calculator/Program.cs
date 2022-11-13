@@ -20,15 +20,12 @@ namespace CALC
     {
         static private bool IsDelimeter(char c)
         {
-            if ((" =".IndexOf(c) != -1))
-                return true;
-            return false;
+            return " =".IndexOf(c) != -1
+                
         }
         static private bool IsOperator(char с)
         {
-            if (("+-/*^()".IndexOf(с) != -1))
-                return true;
-            return false;
+            if "+-/*()".IndexOf(с) != -1   
         }
         static private byte GetPriority(char s)
         {
@@ -37,10 +34,10 @@ namespace CALC
                 case '(': return 0;
                 case ')': return 1;
                 case '+': return 2;
-                case '-': return 3;
-                case '*': return 4;
-                case '/': return 4;
-                default: return 5;
+                case '-': return 2;
+                case '*': return 3;
+                case '/': return 3;
+                default: return 4;
             }
         }
         static public double Calculate(string input)
