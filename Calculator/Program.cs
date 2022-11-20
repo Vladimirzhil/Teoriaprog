@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,17 +18,17 @@ namespace CALC
     }
     class RPN
     {
-        private static  bool IsDelimeter(char c)
+        private static bool IsDelimeter(char c)
         {
             return " =".IndexOf(c) != -1;
 
 
         }
-        private static  bool IsOperator(char с)
+        private static bool IsOperator(char с)
         {
             return "+-/*()".IndexOf(с) != -1;
         }
-        private static  byte GetPriority(char s)
+        private static byte GetPriority(char s)
         {
             switch (s)
             {
@@ -41,7 +41,7 @@ namespace CALC
                 default: return 4;
             }
         }
-        public static  double Calculate(string input)
+        public static double Calculate(string input)
         {
             string output = ConvertExpression(input);
             double result = ExpressionCounting(output);
@@ -79,7 +79,7 @@ namespace CALC
 
         private static double ExpressionCounting(string input)
         {
-            
+
             {
                 double result = 0;
                 Stack<double> temp = new Stack<double>();
@@ -88,26 +88,14 @@ namespace CALC
                     if (Char.IsDigit(input[i]))
                     {
                         string a = string.Empty;
-                        while (!IsDelimeter(input[i]) && !IsOperator(input[i]))
-                        {
-                            a += input[i];
-                            i++;
-                            if (i == input.Length) break;
-                        }
+                        a += Variableentry(a,input,i,temp);
+                        i += countI(input, i);
                         temp.Push(double.Parse(a));
                         i--;
                     }
                     else if (IsOperator(input[i]))
                     {
-                        double a = temp.Pop();
-                        double b = temp.Pop();
-                        switch (input[i])
-                        {
-                            case '+': result = b + a; break;
-                            case '-': result = b - a; break;
-                            case '*': result = b * a; break;
-                            case '/': result = b / a; break;
-                        }
+                        result= counting(input, i,result,temp);
                         temp.Push(result);
                     }
                 }
@@ -150,10 +138,40 @@ namespace CALC
             }
             return output;
         }
-       
+        public static string Variableentry(string a,string input ,int i, Stack<double> temp)
+        {
+            while (!IsDelimeter(input[i]) && !IsOperator(input[i]))
+            {
+                a += input[i];
+                i++;
+                if (i == input.Length) break;
+            }
+            return a;
+        }
+        public static int countI(string input,int i) 
+        {
+            while (!IsDelimeter(input[i]) && !IsOperator(input[i]))
+            {
+                i++;
+                if (i == input.Length) break;
+            }
+            i--;
+            return i;
+        }
+        public static double counting(string input,int i, double result, Stack<double> temp) 
+        {
+            double a = temp.Pop();
+            double b = temp.Pop();
+            switch (input[i])
+            {
+                case '+': result = b + a; break;
+                case '-': result = b - a; break;
+                case '*': result = b * a; break;
+                case '/': result = b / a; break;
+            }
+            return result;
         }
 
     }
 
-    }
 }
