@@ -57,4 +57,4 @@ BPMN (Business Process Model and Notation) — это язык моделиро�
 • Артефакты
 ![image](https://user-images.githubusercontent.com/105555106/198086321-0ffd73ca-5b05-46df-b635-ca73ad0650b0.png)
 ## IDEF модель
-![image](https://user-images.githubusercontent.com/105555106/203589288-f2508fed-b2b5-4f57-9d71-82dc4ccd13ff.png)
+![image](https://user-images.githubusercontent.com/105555106/203591295-46237a16-a829-4917-9161-5b7470903509.png)
