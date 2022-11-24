@@ -88,14 +88,14 @@ namespace CALC
                     if (Char.IsDigit(input[i]))
                     {
                         string a = string.Empty;
-                        a += Variableentry(a,input,i,temp);
+                        a += Variableentry(a, input, i, temp);
                         i += countI(input, i);
                         temp.Push(double.Parse(a));
                         i--;
                     }
                     else if (IsOperator(input[i]))
                     {
-                        result= counting(input, i,result,temp);
+                        result = counting(input, i, result, temp);
                         temp.Push(result);
                     }
                 }
@@ -138,7 +138,7 @@ namespace CALC
             }
             return output;
         }
-        public static string Variableentry(string a,string input ,int i, Stack<double> temp)
+        public static string Variableentry(string a, string input, int i, Stack<double> temp)
         {
             while (!IsDelimeter(input[i]) && !IsOperator(input[i]))
             {
@@ -148,7 +148,7 @@ namespace CALC
             }
             return a;
         }
-        public static int countI(string input,int i) 
+        public static int countI(string input, int i)
         {
             while (!IsDelimeter(input[i]) && !IsOperator(input[i]))
             {
@@ -158,7 +158,7 @@ namespace CALC
             i--;
             return i;
         }
-        public static double counting(string input,int i, double result, Stack<double> temp) 
+        public static double counting(string input, int i, double result, Stack<double> temp)
         {
             double a = temp.Pop();
             double b = temp.Pop();
