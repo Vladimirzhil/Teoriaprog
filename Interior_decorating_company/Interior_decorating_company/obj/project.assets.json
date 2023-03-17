@@ -3633,11 +3633,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Vladimir\\Desktop\\Interior_decorating_company\\Interior_decorating_company\\Interior_decorating_company.csproj",
+      "projectUniqueName": "C:\\Users\\Vladimir\\Documents\\GitHub\\Teoriaprog\\Interior_decorating_company\\Interior_decorating_company\\Interior_decorating_company.csproj",
       "projectName": "Interior_decorating_company",
-      "projectPath": "C:\\Users\\Vladimir\\Desktop\\Interior_decorating_company\\Interior_decorating_company\\Interior_decorating_company.csproj",
+      "projectPath": "C:\\Users\\Vladimir\\Documents\\GitHub\\Teoriaprog\\Interior_decorating_company\\Interior_decorating_company\\Interior_decorating_company.csproj",
       "packagesPath": "C:\\Users\\Vladimir\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Vladimir\\Desktop\\Interior_decorating_company\\Interior_decorating_company\\obj\\",
+      "outputPath": "C:\\Users\\Vladimir\\Documents\\GitHub\\Teoriaprog\\Interior_decorating_company\\Interior_decorating_company\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Vladimir\\AppData\\Roaming\\NuGet\\NuGet.Config",

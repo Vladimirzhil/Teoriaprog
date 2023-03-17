@@ -23,9 +23,9 @@ namespace Interior_decorating_company.DAL.Controllers
 
         // GET api/users/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Workcatalog>> Get(int Number)
+        public async Task<ActionResult<Workcatalog>> Get(int Id)
         {
-            Workcatalog workcatalog = await db.Workcatalogs.FirstOrDefaultAsync(x => x.WorkcatalogId == Number);
+            Workcatalog workcatalog = await db.Workcatalogs.FirstOrDefaultAsync(x => x.Workcatalog_Id == Id);
             if (workcatalog == null)
                 return NotFound();
             return new ObjectResult(workcatalog);
@@ -53,7 +53,7 @@ namespace Interior_decorating_company.DAL.Controllers
             {
                 return BadRequest();
             }
-            if (!db.Workcatalogs.Any(x => x.WorkcatalogId == workcatalog.WorkcatalogId))
+            if (!db.Workcatalogs.Any(x => x.Workcatalog_Id == workcatalog.Workcatalog_Id))
             {
                 return NotFound();
             }
@@ -67,7 +67,7 @@ namespace Interior_decorating_company.DAL.Controllers
         [HttpDelete("{Id}")]
         public async Task<ActionResult<Workcatalog>> Delete(int Id)
         {
-            Workcatalog workcatalog = db.Workcatalogs.FirstOrDefault(x => x.WorkcatalogId == Id);
+            Workcatalog workcatalog = db.Workcatalogs.FirstOrDefault(x => x.Workcatalog_Id == Id);
             if (workcatalog == null)
             {
                 return NotFound();

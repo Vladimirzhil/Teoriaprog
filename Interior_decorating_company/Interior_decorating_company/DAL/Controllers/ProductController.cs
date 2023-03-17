@@ -23,9 +23,9 @@ namespace Interior_decorating_company.DAL.Controllers
 
         // GET api/users/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> Get(int Number)
+        public async Task<ActionResult<Product>> Get(int Id)
         {
-            Product product = await db.Products.FirstOrDefaultAsync(x => x.Item_Id == Number);
+            Product product = await db.Products.FirstOrDefaultAsync(x => x.Item_Id == Id);
             if (product == null)
                 return NotFound();
             return new ObjectResult(product);

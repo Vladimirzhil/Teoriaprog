@@ -5,9 +5,12 @@ namespace DAL
     public class Workcatalog
     {
         [Key]
-        public int WorkcatalogId { get; set; }
+        public int Workcatalog_Id { get; set; }
         public string Name { get; set; }
         public int Pricework { get; set; }
-        public LinkedList<Typeofwork> Typeofworks { get; set; } = new();
+        public List<Typeofwork> GetTypeofworks(ApplicationContext db)
+        {
+            return db.Typeofworks.Where(tr => tr.Workcatalog.Workcatalog_Id == Workcatalog_Id).ToList();
+        }
     }
 }

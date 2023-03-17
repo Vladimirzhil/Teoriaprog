@@ -22,9 +22,9 @@ namespace Interior_decorating_company.DAL.Controllers
 
         // GET api/users/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Jobtitle>> Get(int Number)
+        public async Task<ActionResult<Jobtitle>> Get(int Id)
         {
-            Jobtitle jobtitle = await db.Jobtitles.FirstOrDefaultAsync(x => x.Job_ID == Number);
+            Jobtitle jobtitle = await db.Jobtitles.FirstOrDefaultAsync(x => x.Job_Id == Id);
             if (jobtitle == null)
                 return NotFound();
             return new ObjectResult(jobtitle);
@@ -52,7 +52,7 @@ namespace Interior_decorating_company.DAL.Controllers
             {
                 return BadRequest();
             }
-            if (!db.Jobtitles.Any(x => x.Job_ID == jobtitle.Job_ID))
+            if (!db.Jobtitles.Any(x => x.Job_Id == jobtitle.Job_Id))
             {
                 return NotFound();
             }
@@ -66,7 +66,7 @@ namespace Interior_decorating_company.DAL.Controllers
         [HttpDelete("{Id}")]
         public async Task<ActionResult<Jobtitle>> Delete(int Id)
         {
-            Jobtitle jobtitle = db.Jobtitles.FirstOrDefault(x => x.Job_ID == Id);
+            Jobtitle jobtitle = db.Jobtitles.FirstOrDefault(x => x.Job_Id == Id);
             if (jobtitle == null)
             {
                 return NotFound();

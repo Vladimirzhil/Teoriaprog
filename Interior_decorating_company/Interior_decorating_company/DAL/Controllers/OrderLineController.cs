@@ -22,9 +22,9 @@ namespace Interior_decorating_company.DAL.Controllers
 
         // GET api/users/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<OrderLine>> Get(int Number)
+        public async Task<ActionResult<OrderLine>> Get(int Id)
         {
-            OrderLine orderLine = await db.OrderLines.FirstOrDefaultAsync(x => x.OrderLine_ID == Number);
+            OrderLine orderLine = await db.OrderLines.FirstOrDefaultAsync(x => x.OrderLine_Id == Id);
             if (orderLine == null)
                 return NotFound();
             return new ObjectResult(orderLine);
@@ -52,7 +52,7 @@ namespace Interior_decorating_company.DAL.Controllers
             {
                 return BadRequest();
             }
-            if (!db.OrderLines.Any(x => x.OrderLine_ID == orderLine.OrderLine_ID))
+            if (!db.OrderLines.Any(x => x.OrderLine_Id == orderLine.OrderLine_Id))
             {
                 return NotFound();
             }
@@ -66,7 +66,7 @@ namespace Interior_decorating_company.DAL.Controllers
         [HttpDelete("{Id}")]
         public async Task<ActionResult<OrderLine>> Delete(int Id)
         {
-            OrderLine orderLine = db.OrderLines.FirstOrDefault(x => x.OrderLine_ID == Id);
+            OrderLine orderLine = db.OrderLines.FirstOrDefault(x => x.OrderLine_Id == Id);
             if (orderLine == null)
             {
                 return NotFound();

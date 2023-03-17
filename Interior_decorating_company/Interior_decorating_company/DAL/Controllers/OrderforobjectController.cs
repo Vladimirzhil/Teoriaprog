@@ -23,9 +23,9 @@ namespace Interior_decorating_company.DAL.Controllers
 
         // GET api/users/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Orderforobject>> Get(int Number)
+        public async Task<ActionResult<Orderforobject>> Get(int Id)
         {
-            Orderforobject orderforobject = await db.Orderforobjects.FirstOrDefaultAsync(x => x.Order_number == Number);
+            Orderforobject orderforobject = await db.Orderforobjects.FirstOrDefaultAsync(x => x.Order_number_Id == Id);
             if (orderforobject == null)
                 return NotFound();
             return new ObjectResult(orderforobject);
@@ -53,7 +53,7 @@ namespace Interior_decorating_company.DAL.Controllers
             {
                 return BadRequest();
             }
-            if (!db.Orderforobjects.Any(x => x.Order_number == orderforobject.Order_number))
+            if (!db.Orderforobjects.Any(x => x.Order_number_Id == orderforobject.Order_number_Id))
             {
                 return NotFound();
             }
@@ -67,7 +67,7 @@ namespace Interior_decorating_company.DAL.Controllers
         [HttpDelete("{number}")]
         public async Task<ActionResult<Orderforobject>> Delete(int Id)
         {
-            Orderforobject orderforobject = db.Orderforobjects.FirstOrDefault(x => x.Order_number == Id);
+            Orderforobject orderforobject = db.Orderforobjects.FirstOrDefault(x => x.Order_number_Id == Id);
             if (orderforobject == null)
             {
                 return NotFound();

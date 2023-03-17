@@ -23,9 +23,9 @@ namespace Interior_decorating_company.DAL.Controllers
 
         // GET api/users/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Designproject>> Get(int Number)
+        public async Task<ActionResult<Designproject>> Get(int Id)
         {
-            Designproject designproject = await db.Designprojects.FirstOrDefaultAsync(x => x.Design_project_ID == Number);
+            Designproject designproject = await db.Designprojects.FirstOrDefaultAsync(x => x.Design_project_Id == Id);
             if (designproject == null)
                 return NotFound();
             return new ObjectResult(designproject);
@@ -53,7 +53,7 @@ namespace Interior_decorating_company.DAL.Controllers
             {
                 return BadRequest();
             }
-            if (!db.Designprojects.Any(x => x.Design_project_ID == designproject.Design_project_ID))
+            if (!db.Designprojects.Any(x => x.Design_project_Id == designproject.Design_project_Id))
             {
                 return NotFound();
             }
@@ -67,7 +67,7 @@ namespace Interior_decorating_company.DAL.Controllers
         [HttpDelete("{Id}")]
         public async Task<ActionResult<Designproject>> Delete(int Id)
         {
-            Designproject designproject = db.Designprojects.FirstOrDefault(x => x.Design_project_ID == Id);
+            Designproject designproject = db.Designprojects.FirstOrDefault(x => x.Design_project_Id == Id);
             if (designproject == null)
             {
                 return NotFound();

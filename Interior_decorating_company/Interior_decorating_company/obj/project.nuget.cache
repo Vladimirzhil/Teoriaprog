@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OHMt0gNXwQKSvKkIM8B5lbLOM+90tbnZ3ResAqrth2Ff3PIK5WKK5qMqceW4MgWTzx0DZkYrNqB88AZkINSoxw==",
+  "dgSpecHash": "+Pu2VdDZTIc5SIlAtWpIS7VQ6IjXUvUJxiR7EsH7S6CgSk4AEFFh5Mue/ZXPHo9rD7nOVGrAL2wBnovpP6Z6yQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Vladimir\\Desktop\\Interior_decorating_company\\Interior_decorating_company\\Interior_decorating_company.csproj",
+  "projectFilePath": "C:\\Users\\Vladimir\\Documents\\GitHub\\Teoriaprog\\Interior_decorating_company\\Interior_decorating_company\\Interior_decorating_company.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Vladimir\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Vladimir\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
