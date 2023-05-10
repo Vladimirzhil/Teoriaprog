@@ -1,6 +1,7 @@
 ﻿using DAL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Interior_decorating_company_models;
 
 
 namespace Interior_decorating_company.DAL.Controllers

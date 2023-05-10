@@ -211,3 +211,5 @@ C:\Users\Vladimir\Documents\GitHub\Teoriaprog\Interior_decorating_company\Interi
 C:\Users\Vladimir\Documents\GitHub\Teoriaprog\Interior_decorating_company\Interior_decorating_company\obj\Debug\net7.0\Interior_decorating_company.pdb
 C:\Users\Vladimir\Documents\GitHub\Teoriaprog\Interior_decorating_company\Interior_decorating_company\obj\Debug\net7.0\Interior_decorating_company.genruntimeconfig.cache
 C:\Users\Vladimir\Documents\GitHub\Teoriaprog\Interior_decorating_company\Interior_decorating_company\obj\Debug\net7.0\ref\Interior_decorating_company.dll
+C:\Users\Vladimir\Documents\GitHub\Teoriaprog\Interior_decorating_company\Interior_decorating_company\bin\Debug\net7.0\Interior_decorating_company_models.dll
+C:\Users\Vladimir\Documents\GitHub\Teoriaprog\Interior_decorating_company\Interior_decorating_company\bin\Debug\net7.0\Interior_decorating_company_models.pdb

@@ -13,6 +13,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Interior_decorating_company_models">
+      <HintPath>..\..\Interior_decorating_company_models\Interior_decorating_company_models\obj\Debug\net7.0\Interior_decorating_company_models.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Update="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

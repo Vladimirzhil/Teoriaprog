@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using System.Text;
 using System.IO;
 using DAL;
-
+using Interior_decorating_company_models;
 namespace DAL
 {
     public class ApplicationContext : DbContext
@@ -15,8 +15,6 @@ namespace DAL
         public DbSet<Designproject> Designprojects { get; set; }
         public DbSet<Jobtitle> Jobtitles { get; set; }
         public DbSet<Orderforobject> Orderforobjects { get; set; }
-        public DbSet<OrderLine> OrderLines { get; set; }
-        public DbSet<Product> Products { get; set; }
         public DbSet<Typeofwork> Typeofworks { get; set; }
         public DbSet<Workcatalog> Workcatalogs { get; set; }
         public ApplicationContext(DbContextOptions<ApplicationContext> options)

@@ -1,0 +1,146 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #000000;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.bg-f{
+  color: #10e5f4;
+}
+.fcard{
+  border: 2px solid red;
+  background-color: red;
+}
+.tcard{
+  width: 25rem;
+  color: black;
+  border-radius: 5px;
+  display: grid;
+  text-decoration: none;
+  justify-content: center;
+  border: 2px solid red;
+}
+.tcard:hover{
+color: black;
+cursor: pointer;
+}
+.text {
+  margin-top: 10px;
+  text-align: center;
+  }
+  .footer-copyright {
+  margin-left: 5%;
+  }
+.btn1 {
+  margin-top: 20px;
+  margin-right: 5%;
+  }
+  .btn2 {
+  margin-left: 40px;
+  margin-right: 10px;
+  }
+  
+  .btn4 {
+  margin-left: 700px;
+  margin-top: -20px;
+  }
+  
+  .btn5 {
+  margin-left: 700px;
+  margin-bottom: -25px;
+  }
+  
+  .btn3 {
+  margin-left: 25px;
+  }
+  
+  .btncard {
+  margin-top: 10px;
+  }
+  
+  .footer1 {
+  margin-top: 10px;
+  }
+  
+  .footer2 {
+  margin-top: 10px;
+  }
+  
+  .footer3 {
+  margin-top: 10px;
+  }
+  
+  .home {
+  padding-top: '20px';
+  text-align: justify;
+  }
+  
+  .store1 {
+  padding-top: '20px';
+  text-align: justify;
+  }
+  
+  .store2 {
+  padding-top: '20px';
+  text-align: justify;
+  }
+  
+  .store3 {
+  padding-top: '20px';
+  text-align: justify;
+  }
+  
+  .forma1 {
+  text-align:left;
+  padding: 10px;
+  margin-left: 200px;
+  }
+  
+  .forma2 {
+  text-align:left;
+  padding: 10px;
+  margin-left: 220px;
+  }
+  
+  .form-group {
+  margin-left: 20px;
+  margin-top: 10px;
+  width: 43%;
+  }
+  
+  .forma-group {
+  margin-top: -30px;
+  width: 100%;
+  }
