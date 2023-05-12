@@ -22,18 +22,19 @@ namespace Interior_decorating_company.DAL.Controllers
             return await db.Clients.ToListAsync();
         }
 
-        // GET api/users/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Client>> Get(int Id)
+
+        [HttpGet("GetClient/id={id}")]
+        public async Task<ActionResult<LinkedList<Client>>> GetClient(int id)
         {
-            Client client = await db.Clients.FirstOrDefaultAsync(x => x.Client_Id == Id);
+        Client client = await db.Clients.FirstOrDefaultAsync(x => x.ClientId == id);
             if (client == null)
                 return NotFound();
             return new ObjectResult(client);
         }
 
-        // POST api/users
-        [HttpPost]
+
+
+    [HttpPost]
         public async Task<ActionResult<Client>> Post(Client client)
         {
             if (client == null)
@@ -46,7 +47,7 @@ namespace Interior_decorating_company.DAL.Controllers
             return Ok(client);
         }
 
-        // PUT api/users/
+       
         [HttpPut]
         public async Task<ActionResult<Client>> Put(Client client)
         {
@@ -54,7 +55,7 @@ namespace Interior_decorating_company.DAL.Controllers
             {
                 return BadRequest();
             }
-            if (!db.Clients.Any(x => x.Client_Id == client.Client_Id))
+            if (!db.Clients.Any(x => x.ClientId == client.ClientId))
             {
                 return NotFound();
             }
@@ -64,11 +65,10 @@ namespace Interior_decorating_company.DAL.Controllers
             return Ok(client);
         }
 
-        // DELETE api/users/5
         [HttpDelete("{Id}")]
         public async Task<ActionResult<Client>> Delete(int Id)
         {
-            Client client = db.Clients.FirstOrDefault(x => x.Client_Id == Id);
+            Client client = db.Clients.FirstOrDefault(x => x.ClientId == Id);
             if (client == null)
             {
                 return NotFound();

@@ -21,9 +21,9 @@ namespace Interior_decorating_company.DAL.Controllers
             return await db.Jobtitles.ToListAsync();
         }
 
-        // GET api/users/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Jobtitle>> Get(int Id)
+        
+        [HttpGet("GetClient/id={id}")]
+        public async Task<ActionResult<LinkedList<Jobtitle>>> Get(int Id)
         {
             Jobtitle jobtitle = await db.Jobtitles.FirstOrDefaultAsync(x => x.Job_Id == Id);
             if (jobtitle == null)

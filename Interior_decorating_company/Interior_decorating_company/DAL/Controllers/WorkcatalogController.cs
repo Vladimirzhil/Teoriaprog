@@ -22,17 +22,15 @@ namespace Interior_decorating_company.DAL.Controllers
             return await db.Workcatalogs.ToListAsync();
         }
 
-        // GET api/users/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Workcatalog>> Get(int Id)
+        [HttpGet("GetClient/id={id}")]
+        public async Task<ActionResult<LinkedList<Workcatalog>>> GetWorkcatalog(int id)
         {
-            Workcatalog workcatalog = await db.Workcatalogs.FirstOrDefaultAsync(x => x.Workcatalog_Id == Id);
+            Workcatalog workcatalog = await db.Workcatalogs.FirstOrDefaultAsync(x => x.Workcatalog_Id == id);
             if (workcatalog == null)
                 return NotFound();
             return new ObjectResult(workcatalog);
         }
 
-        // POST api/users
         [HttpPost]
         public async Task<ActionResult<Workcatalog>> Post(Workcatalog workcatalog)
         {
@@ -64,7 +62,6 @@ namespace Interior_decorating_company.DAL.Controllers
             return Ok(workcatalog);
         }
 
-        // DELETE api/users/5
         [HttpDelete("{Id}")]
         public async Task<ActionResult<Workcatalog>> Delete(int Id)
         {

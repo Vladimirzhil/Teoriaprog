@@ -1,33 +1,39 @@
-using Microsoft.AspNetCore.Mvc;
 
-namespace DomainInterior_decorating_company.Controllers
+using Interior_decorating_company_models;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
+using System.Text.Json.Nodes;
+
+
+
+namespace Domain.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class ClientController : ControllerBase
+    [Microsoft.AspNetCore.Mvc.Route("api/Domain/Client")]
+    public class ClientsController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
+        private readonly string? _dalUrl;
+        private readonly HttpClient _client;
 
-        private readonly ILogger<ClientController> _logger;
-
-        public ClientController(ILogger<ClientController> logger)
+        public ClientsController(IConfiguration conf)
         {
-            _logger = logger;
+            _dalUrl = conf.GetValue<string>("DalUrl");
+            _client = new HttpClient();
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        [HttpGet]
+        public async Task<ActionResult<Client[]>> GetClients()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            var response = await _client.GetAsync($"{_dalUrl}/Client");
+            response.EnsureSuccessStatusCode();
+            var content = await response.Content.ReadAsStringAsync();
+            if (content == null) return NotFound();
+
+            return JsonSerializer.Deserialize<Client[]>(content, new JsonSerializerOptions
             {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+                PropertyNameCaseInsensitive = true
+            }) ?? Array.Empty<Client>();
         }
     }
 }

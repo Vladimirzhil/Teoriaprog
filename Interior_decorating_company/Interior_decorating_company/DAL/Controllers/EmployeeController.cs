@@ -22,9 +22,10 @@ namespace Interior_decorating_company.DAL.Controllers
             return await db.Employees.ToListAsync();
         }
 
-        // GET api/users/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Employee>> Get(int Id)
+       
+
+        [HttpGet("GetClient/id={id}")]
+        public async Task<ActionResult<LinkedList<Employee>>> Get(int Id)
         {
             Employee employee = await db.Employees.FirstOrDefaultAsync(x => x.Employee_Id == Id);
             if (employee == null)

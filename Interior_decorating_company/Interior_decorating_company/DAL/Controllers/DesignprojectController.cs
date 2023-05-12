@@ -22,9 +22,9 @@ namespace Interior_decorating_company.DAL.Controllers
             return await db.Designprojects.ToListAsync();
         }
 
-        // GET api/users/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Designproject>> Get(int Id)
+
+        [HttpGet("GetClient/id={id}")]
+        public async Task<ActionResult<LinkedList<Designproject>>> Get(int Id)
         {
             Designproject designproject = await db.Designprojects.FirstOrDefaultAsync(x => x.Design_project_Id == Id);
             if (designproject == null)
@@ -32,7 +32,7 @@ namespace Interior_decorating_company.DAL.Controllers
             return new ObjectResult(designproject);
         }
 
-        // POST api/users
+        
         [HttpPost]
         public async Task<ActionResult<Designproject>> Post(Designproject designproject)
         {

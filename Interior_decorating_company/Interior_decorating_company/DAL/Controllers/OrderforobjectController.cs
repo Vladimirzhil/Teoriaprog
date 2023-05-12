@@ -23,8 +23,8 @@ namespace Interior_decorating_company.DAL.Controllers
         }
 
         // GET api/users/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Orderforobject>> Get(int Id)
+        [HttpGet("GetClient/id={id}")]
+        public async Task<ActionResult<LinkedList<Orderforobject>>> Get(int Id)
         {
             Orderforobject orderforobject = await db.Orderforobjects.FirstOrDefaultAsync(x => x.Order_number_Id == Id);
             if (orderforobject == null)

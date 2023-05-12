@@ -33,8 +33,9 @@ export default function NaviBar() {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
                             <Nav.Link> <Link to='/design'> Наши дизайн проекты </Link> </Nav.Link>
-                            
+                            <Nav.Link> <Link to='/workcatalog'> Каталог работ </Link> </Nav.Link>
                             <Nav.Link> <Link to='/form'> Сделать заказ </Link> </Nav.Link>
+                            
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

@@ -22,9 +22,9 @@ namespace Interior_decorating_company.DAL.Controllers
             return await db.Typeofworks.ToListAsync();
         }
 
-        // GET api/users/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Typeofwork>> Get(int Id)
+
+        [HttpGet("GetClient/id={id}")]
+        public async Task<ActionResult<LinkedList<Typeofwork>>> Get(int Id)
         {
             Typeofwork typeofwork = await db.Typeofworks.FirstOrDefaultAsync(x => x.Typeofwork_Id == Id);
             if (typeofwork == null)
