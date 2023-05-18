@@ -24,7 +24,7 @@ namespace Interior_decorating_company.DAL.Controllers
 
        
 
-        [HttpGet("GetClient/id={id}")]
+        [HttpGet("GetEmployee/id={id}")]
         public async Task<ActionResult<LinkedList<Employee>>> Get(int Id)
         {
             Employee employee = await db.Employees.FirstOrDefaultAsync(x => x.Employee_Id == Id);
@@ -34,7 +34,7 @@ namespace Interior_decorating_company.DAL.Controllers
         }
 
         // POST api/users
-        [HttpPost]
+        [HttpPost("PostEmployee")]
         public async Task<ActionResult<Employee>> Post(Employee employee)
         {
             if (employee == null)

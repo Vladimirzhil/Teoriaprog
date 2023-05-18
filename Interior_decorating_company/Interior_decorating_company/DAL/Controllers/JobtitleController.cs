@@ -22,7 +22,7 @@ namespace Interior_decorating_company.DAL.Controllers
         }
 
         
-        [HttpGet("GetClient/id={id}")]
+        [HttpGet("GetJobtitle/id={id}")]
         public async Task<ActionResult<LinkedList<Jobtitle>>> Get(int Id)
         {
             Jobtitle jobtitle = await db.Jobtitles.FirstOrDefaultAsync(x => x.Job_Id == Id);
@@ -32,7 +32,7 @@ namespace Interior_decorating_company.DAL.Controllers
         }
 
         // POST api/users
-        [HttpPost]
+        [HttpPost("PostJobtitle")]
         public async Task<ActionResult<Jobtitle>> Post(Jobtitle jobtitle)
         {
             if (jobtitle == null)

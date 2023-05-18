@@ -23,7 +23,7 @@ namespace Interior_decorating_company.DAL.Controllers
         }
 
 
-        [HttpGet("GetClient/id={id}")]
+        [HttpGet("GetTypeofwork/id={id}")]
         public async Task<ActionResult<LinkedList<Typeofwork>>> Get(int Id)
         {
             Typeofwork typeofwork = await db.Typeofworks.FirstOrDefaultAsync(x => x.Typeofwork_Id == Id);
@@ -33,7 +33,7 @@ namespace Interior_decorating_company.DAL.Controllers
         }
 
         // POST api/users
-        [HttpPost]
+        [HttpPost("PostTypeofwork")]
         public async Task<ActionResult<Typeofwork>> Post(Typeofwork typeofwork)
         {
             if (typeofwork == null)

@@ -23,7 +23,7 @@ namespace Interior_decorating_company.DAL.Controllers
         }
 
 
-        [HttpGet("GetClient/id={id}")]
+        [HttpGet("GetDesignproject/id={id}")]
         public async Task<ActionResult<LinkedList<Designproject>>> Get(int Id)
         {
             Designproject designproject = await db.Designprojects.FirstOrDefaultAsync(x => x.Design_project_Id == Id);
@@ -33,7 +33,7 @@ namespace Interior_decorating_company.DAL.Controllers
         }
 
         
-        [HttpPost]
+        [HttpPost("PostDesignproject")]
         public async Task<ActionResult<Designproject>> Post(Designproject designproject)
         {
             if (designproject == null)

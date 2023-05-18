@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { Button, Modal, Form, input } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -32,6 +32,45 @@ export function Form1() {
         data.splice(index, 1)
         setFormFields(data)
     }
+    //СуперПропс
+    this.onInputChange = this.onInputChange.bind(this);
+
+
+   const DesignUrl='/api/Domain/Designproject/GetDesignprojectByName'
+   const [dataDesign,setDataDesign]=useState('')
+
+    useEffect(() => {
+        const fetchDataClient = async() => {
+          const response = await axios.get(url)
+    
+          setData(response.data)
+        }
+        const fetchDataOrder = async() => {
+            const response = await axios.get(url)
+      
+            setData(response.data)
+          }
+          const fetchDataTypework = async() => {
+            const response = await axios.get(url)
+      
+            setData(response.data)
+          }
+          const fetchDataDesignproject = async() => {
+            const response = await axios.get(DesignUrl)
+      
+            setDataDesign(response.dataDesign)
+          }
+          const fetchDataWorkcatalog = async() => {
+            const response = await axios.get(DesignUrl)
+      
+            setDataWorkcatalog(response.dataWorkcatalog)
+          }
+          fetchDataClient(); fetchDataOrder(); fetchDataTypework(); fetchDataDesignproject();fetchDataWorkcatalog()
+      }, [tempValue]);
+    
+    
+
+
 
     return (
         <div className="App">
@@ -55,13 +94,11 @@ export function Form1() {
             <div class="form-group">
                 <label for="inputDesign">Выберите дизайн</label>
                 <select id="inputDesign" class="form-control">
-                    <option selected>Выбрать</option>
-                    <option>Домашний</option>
-                    <option>Фиолетовое борроко</option>
-                    <option>Лофт</option>
-                    <option>Дорого богато</option>
-                    <option>Офисиник</option>
-                    <option>Президент люкс</option>
+                    {dataDesign.map((post)=>{
+                        return(
+                            <option value={this.state} onChange={onInputChange}>{post.design_project_name}</option>
+                        );
+                    })}
                 </select>
                 <form onSubmit={submit}>
                     <h1 class="btn5">

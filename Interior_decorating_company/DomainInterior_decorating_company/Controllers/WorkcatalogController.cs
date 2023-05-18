@@ -21,19 +21,14 @@ namespace Domain.Controllers
             _dalUrl = conf.GetValue<string>("DalUrl");
             _client = new HttpClient();
         }
-
-        [HttpGet]
-        public async Task<ActionResult<Workcatalog[]>> GetWorkcatalogs()
+        [HttpGet("GetWorkcatalogByName")]
+        public async Task<ActionResult<Workcatalog[]>> GetWorkcatalogs(string? name)
         {
-            var response = await _client.GetAsync($"{_dalUrl}/Workcatalog");
+            var response = await _client.GetAsync($"{_dalUrl}/Workcatalog?name={name}");
             response.EnsureSuccessStatusCode();
-            var content = await response.Content.ReadAsStringAsync();
-            if (content == null) return NotFound();
-
-            return JsonSerializer.Deserialize<Workcatalog[]>(content, new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true
-            }) ?? Array.Empty<Workcatalog>();
+            var result = await response.Content.ReadFromJsonAsync<Workcatalog[]>() ?? Array.Empty<Workcatalog>();
+            if (string.IsNullOrWhiteSpace(name)) return result;
+            return Array.FindAll(result, p => !string.IsNullOrWhiteSpace(p.Name) && p.Name.Contains(name));
         }
     }
 }

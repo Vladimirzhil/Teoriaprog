@@ -22,7 +22,7 @@ namespace Interior_decorating_company.DAL.Controllers
             return await db.Workcatalogs.ToListAsync();
         }
 
-        [HttpGet("GetClient/id={id}")]
+        [HttpGet("GetWorkcatalog/id={id}")]
         public async Task<ActionResult<LinkedList<Workcatalog>>> GetWorkcatalog(int id)
         {
             Workcatalog workcatalog = await db.Workcatalogs.FirstOrDefaultAsync(x => x.Workcatalog_Id == id);
@@ -31,7 +31,7 @@ namespace Interior_decorating_company.DAL.Controllers
             return new ObjectResult(workcatalog);
         }
 
-        [HttpPost]
+        [HttpPost("PostWorkcatalog")]
         public async Task<ActionResult<Workcatalog>> Post(Workcatalog workcatalog)
         {
             if (workcatalog == null)

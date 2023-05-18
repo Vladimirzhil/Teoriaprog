@@ -34,7 +34,7 @@ namespace Interior_decorating_company.DAL.Controllers
 
 
 
-    [HttpPost]
+    [HttpPost("PostClient")]
         public async Task<ActionResult<Client>> Post(Client client)
         {
             if (client == null)

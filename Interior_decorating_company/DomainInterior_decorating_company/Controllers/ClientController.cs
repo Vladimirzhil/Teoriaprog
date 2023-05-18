@@ -35,5 +35,18 @@ namespace Domain.Controllers
                 PropertyNameCaseInsensitive = true
             }) ?? Array.Empty<Client>();
         }
+        [HttpPost]
+        public async Task<ActionResult<Client>> PostClient(Client client)
+        { 
+        JsonContent content = JsonContent.Create(client);
+        using var result = await _client.PostAsync($"{_dalUrl}/Client/PostClient", content);
+        var dalClient = await result.Content.ReadFromJsonAsync<Client>();
+        Console.WriteLine($"{dalClient?.Customername}");
+            if (dalClient == null)
+                return BadRequest();
+            else
+                return dalClient;
+        }
+ 
     }
 }
